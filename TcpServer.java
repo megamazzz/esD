@@ -31,9 +31,7 @@ public class CalcolatriceServer {
 			if (parti.length != 3) {
     				return "ERRORE: Formato non valido";
 			}
-			double num1 = Double.parseDouble(parti[0]);
-			String operazione = parti[1];
-			double num2 = Double.parseDouble(parti[2]);
+			trasforma();
 
 			switch (operazione) {
     			case "+": return num1 + num2;
@@ -44,6 +42,12 @@ public class CalcolatriceServer {
         			return num1 / num2;
     				default: throw new IllegalArgumentException("Operazione non supportata");
 			}
+			}
+
+			private static trasforma(){
+				double num1 = Double.parseDouble(parti[0]);
+				String operazione = parti[1];
+				double num2 = Double.parseDouble(parti[2]);
 			}
 
 	}
