@@ -16,9 +16,8 @@ public class CalcolatriceServer {
 			System.out.println(" Client: in ascolto ");
     			// Gestisci comunicazione con client
 
-			// Create input and output streams to read/write data
-			DataInputStream inStream = new DataInputStream(clientSocket.getInputStream());
-			DataOutputStream outStream = new DataOutputStream(clientSocket.getOutputStream());	
+			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+     		BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));	
 
 			String richiesta;
 			
