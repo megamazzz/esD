@@ -27,10 +27,7 @@ public class CalcolatriceServer {
 
 			// Esempio di parsing: "10 + 5"
 			public static operazioni(){
-							String[] parti = richiesta.split(" ");
-			if (parti.length != 3) {
-    				return "ERRORE: Formato non valido";
-			}
+
 			trasforma();
 
 			switch (operazione) {
@@ -45,6 +42,10 @@ public class CalcolatriceServer {
 			}
 
 			private static trasforma(){
+				String[] parti = richiesta.split(" ");
+				if (parti.length != 3) {
+    					return "ERRORE: Formato non valido";
+				}
 				double num1 = Double.parseDouble(parti[0]);
 				String operazione = parti[1];
 				double num2 = Double.parseDouble(parti[2]);
