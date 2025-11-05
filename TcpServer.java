@@ -19,15 +19,14 @@ public class CalcolatriceServer {
 			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
      		BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));	
 
-			String richiesta;
 			
 		}
 		client.close();
 		}
 
 			// Esempio di parsing: "10 + 5"
-
-			String[] parti = richiesta.split(" ");
+			public static operazioni(){
+							String[] parti = richiesta.split(" ");
 			if (parti.length != 3) {
     				return "ERRORE: Formato non valido";
 			}
@@ -44,6 +43,8 @@ public class CalcolatriceServer {
         			return num1 / num2;
     				default: throw new IllegalArgumentException("Operazione non supportata");
 			}
+			}
+
 	}
     }
 }
